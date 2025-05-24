@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     background-color: ivory;
     margin: 0;
     padding: 20px;
@@ -44,4 +44,34 @@ h1 {
 p {
     font-size: 25px;
     line-height: 1.8;
+}
+
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 10s infinite;
+}
+
+.slides img {
+  width: 100%;
+}
+
+.slider { 
+    display : flex; 
+    overflow-x : auto; 
+    scroll-snap-type : x obliged; 
+    scroll-behavior: smooth; 
+} 
+
+.slide { 
+    flex : 0  0  100% ; 
+    scroll-snap-align : start; 
+    background-size : cover; 
+    background-position : center; 
 }
