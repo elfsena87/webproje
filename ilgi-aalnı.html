@@ -1,0 +1,10 @@
+<script>
+    fetch=("https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=tr")
+    .then(res=>res.json())
+    .then(data=>
+        {
+            let movies=data.results.map(movie=>'<p>${movie.title}</p>').join("");
+            document.getElementById("filmList").innerHTML=movies;
+        });
+</script>
+<div id="filmList"></div>

@@ -1,0 +1,71 @@
+/* Genel Sayfa Stili */
+body {
+    background-color: #f4f4f4; /* Açık gri arka plan */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #2c3e50; /* Genel yazı rengi */
+}
+
+/* Başlık Stili */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2c3e50; /* Başlık rengi */
+    margin-top: 40px;
+}
+
+/* Tanıtım Bölümü */
+.about-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* Beyaz kutu */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Tanıtım Yazısı */
+.about-container p {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+/* Resimler İçin Genel Stil */
+.image-box {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.image-box img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Linklerin Stili */
+.image-box a {
+    font-size: 20px; /* Linklerin yazı boyutunu büyüttüm */
+    font-weight: bold;
+    text-decoration: none;
+    color: #2980b9;
+    display: block;
+    margin-top: 10px;
+}
+
+.image-box a:hover {
+    text-decoration: underline;
+    color: #1a5276;
+}
+
+/* Resim Kutularının Konumlandırması */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}

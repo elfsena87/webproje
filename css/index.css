@@ -1,0 +1,59 @@
+body {
+  background-color:ivory;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+    font-size: 55px;
+  text-align: center;
+  margin-top: 40px;
+  color: #2c3e50;
+}
+
+p {
+    font-size: 25px;
+    line-height: 1.8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px;
+  background-color: #f9f9f9; /* Hafif arka plan rengi */
+  border-radius: 10px; /* Kenarları yuvarlat */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Hafif gölge efekti */
+}
+
+img {
+  width: 97%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: none; 
+}
+
+.image-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.image-box a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 100px;
+}
+
+.image-box a:hover {
+    font-size: 110px; /* Üzerine gelindiğinde daha büyük olacak */
+    color: #1a5276;
+    transition: 0.3s ease-in-out; /* Animasyonu yumuşatır */
+}
