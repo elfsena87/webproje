@@ -1,0 +1,43 @@
+.arama {
+  text-align: center;
+  margin: 20px;
+}
+
+.arama input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.arama button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.muzikler {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kart {
+  background-color: ivory;
+  border: 1px solid #353e64;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.kart img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 5px;
+}
