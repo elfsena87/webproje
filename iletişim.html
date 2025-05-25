@@ -1,16 +1,84 @@
-<form id="iletişimForm">
-    <input type="text" id="ad" placeholder="Adınız"/>
-     <input type="email" id="email" placeholder="Email"/>
-      <input type="tel" id="telefon" placeholder="Telefon"/>
-      <textarea id="mesaj"></textarea>
-      <button type="button" onclick="kontrolEt()">Kontrol Et</button>
-      <button type="submit">Gönder</button>
-</form>
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <title>İLETİŞİM FORM</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    </head>
+    <body>
+        <h2>İLETİŞİM FORMU</h2>
+        <form id="contactForm" @submit.prevent="handleSubmit">
+            <label for="name">Ad Soyad:</label>
+            <input type="text" id="name" v-model="name" required>
+            <br><br>
+             <label for="email">E-posta:</label>
+            <input type="email" id="email" v-model="email" required>
+            <br><br>
+             <label for="phone">Telefon No:</label>
+            <input type="text" id="phone" v-model="phone" required>
+            <br><br>
+            <button type="button" @click="clearForm">Temizle</button>
+            <button type="submit">Gönder</button>
+        </form>
+        <div id="result" v-if="formSubmitted">
+            <h3>Gönderilen Bilgi:</h3>
+            <p><strong>Ad Soyad:</strong>{{name}}</p>
+             <p><strong>E-posta:</strong>{{email}}</p>
+              <p><strong>Telefon No:</strong>{{phone}}</p>
+        </div>
 
-<script>
-    function kontrolEt()
-    {
-        let telefon=document.getElementBYId("telefon").value;
-        if(!/^\d+$/.test(telefon)) alert("Telefon Numarası Sadece Rakamlardan Oluşmalıdır.");
-    }
-</script>
+        <script>
+            new Vue
+            ({
+                el:'body',
+
+                data:
+                {
+                    name:'',
+                    email:'',
+                    phone:'',
+                    formSubmitted:false
+                },
+
+                methods:
+                {
+                    validateForm()
+                    {
+                        //eposta kontrolü.
+                        const emailRegex=/^[a-aZ-Z0-9._%+-]+@[a-aZ-Z0-9.-]+\.[a-aZ-Z]{2,}$/;
+                        if(!emailRegex.test(this.email))
+                    {
+                        alert("Geçerli Bir Elektronik Posta adresi Girin");
+                        return false
+                    }
+                    //telefon no kontrol.
+                    if(!/^\d+$/.test(this.phone))
+                    {
+                        alert("Telefon Numarası Sadece Rakam İçermeli");
+                        return false;
+                    }
+                    return true;
+                    },
+
+                    handleSubmit()
+                    {
+                        if(this.validateForm())
+                    {
+                        this.formSubmitted=true;
+                    }
+                    },
+
+                    clearForm()
+                    {
+                        this.name='';
+                        this.email='';
+                        this.phone='';
+                        this.formSubmitted=false;
+                    }
+                }
+
+            });
+        </script>
+    </body>
+</html>

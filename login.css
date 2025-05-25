@@ -1,0 +1,77 @@
+/* Genel sayfa ayarları */
+body {
+    background-color: ivory; 
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Login formunun kapsayıcısı */
+.login-container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    border-top: 5px solid #8B0000;  /* Koyu bordo vurgusu */
+}
+
+/* Başlık ayarları */
+.login-container h1 {
+    text-align: center;
+    color: #002147;  /* Koyu mavi */
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Form elemanlarının ortak stilleri */
+.login-container label {
+    display: block;
+    font-size: 16px;
+    color: #002147;
+    margin-bottom: 8px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    border-color:whitesmoke; /* Altın odak rengi */
+    outline: none;
+}
+
+/* Giriş butonu stili */
+.login-container button {
+    width: 100%;
+    background-color:ghostwhite;
+    color: #002147;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #8B0000;  /* Koyu bordo hover rengi */
+    color: #FFFFFF;
+}

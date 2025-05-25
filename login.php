@@ -1,19 +1,25 @@
 <?php
-// Kullanıcı bilgileri
-$dogru_eposta = "b2412100001@sakarya.edu.tr";
-$dogru_sifre = "b2412100001";
+if($_SERVER["REQUEST_METHOD"]=="POST")
+{
+    //KULLANICIDAN GELEN BLGİLER.
+    $email=$_POST['email'];
+    $password=$_['password'];
 
-// Formdan gelen değerler
-$email = $_POST['email'] ?? '';
-$sifre = $_POST['password'] ?? '';
+    //e-psta ve şifreyi kontrol.
+    $valid_email='b241210078@sakarya.edu.tr';
+     $valid_password='b241210078';
 
-// Kontrol
-if ($email === $dogru_eposta && $sifre === $dogru_sifre) {
-    $kullanici_adi = explode('@', $email)[0]; // b2412100001
-    echo "Hoşgeldiniz $kullanici_adi";
-} else {
-    // Başarısızsa login sayfasına yönlendir
-    header("Location: login.html");
-    exit;
+     if($email===$valid_email && $password===$valid_password)
+     {
+        //giriş yapılır.
+        echo "hoşgeldiniz" .substr($password,0,10) . "!";
+     }
+     else
+     {
+        //girmez ve aynı sayfada kalır.
+        header("Loction:login.html");
+        exit();
+     }
+    
 }
 ?>
