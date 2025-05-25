@@ -20,25 +20,40 @@
             <br><br>
             <button type="button" @click="clearForm">Temizle</button>
             <button type="submit">Gönder</button>
-        </form>
-        <div id="result" v-if="formSubmitted">
+
+        <!--butonlar-->
+        <button type="button" @click="checkAllFields">Formu Kontrol Et</button>
+         <button type="button" @click="checkPhone">Sadece Tel. No. Kontrol Et</button>
+
+          <div id="result" v-if="formSubmitted">
             <h3>Gönderilen Bilgi:</h3>
             <p><strong>Ad Soyad:</strong>{{name}}</p>
              <p><strong>E-posta:</strong>{{email}}</p>
               <p><strong>Telefon No:</strong>{{phone}}</p>
         </div>
 
+        <!--hata mesajı-->
+        <div v-if="erorMessages.length > 0">
+            <h4>Hatalar:</h4>
+            <ul>
+                <li v-for="eror in erorMessages" :key="eror">{{eror}}</li>
+            </ul>
+        </div>
+        </form>
+
+
         <script>
             new Vue
             ({
-                el:'body',
+                el:'#app',
 
                 data:
                 {
                     name:'',
                     email:'',
                     phone:'',
-                    formSubmitted:false
+                    formSubmitted:false,
+                    erorMessages:[]
                 },
 
                 methods:
@@ -47,35 +62,52 @@
                     {
                         //eposta kontrolü.
                         const emailRegex=/^[a-aZ-Z0-9._%+-]+@[a-aZ-Z0-9.-]+\.[a-aZ-Z]{2,}$/;
-                        if(!emailRegex.test(this.email))
-                    {
-                        alert("Geçerli Bir Elektronik Posta adresi Girin");
-                        return false
-                    }
-                    //telefon no kontrol.
-                    if(!/^\d+$/.test(this.phone))
-                    {
-                        alert("Telefon Numarası Sadece Rakam İçermeli");
-                        return false;
-                    }
-                    return true;
+                        return emailRegex.test(this.email);
                     },
+                    
+                    //telefon no kontrol.
+                   validatePhone()
+                   {
+                    const phoneRegex=/^\d+$/;
+                    return phoneRegex.test(this.phone);
+                   },
 
-                    handleSubmit()
-                    {
-                        if(this.validateForm())
-                    {
+                   //tüm formu kontrol etme,
+                   checkAllFields()
+                   {
+                    this.erorMessages=[];
+                    if(!this.name){
+                        this.erorMessages.push("Bu Kısmı Boş Bırakamazsınız.");
+                    }
+                    
+                    if(!this.validateEmail){
+                        this.erorMessages.push("E-posta Adresi Geçersiz.Geçerli Bir E-posta Adresi Girin.");
+                    }
+
+                     if(!this.validatePhone){
+                        this.erorMessages.push("Telefon Numarası Sadece Rakam İçermelidir.");
+                    }
+
+                    if(this.erorMessages.length===0){
                         this.formSubmitted=true;
                     }
-                    },
-
-                    clearForm()
-                    {
-                        this.name='';
-                        this.email='';
-                        this.phone='';
-                        this.formSubmitted=false;
+                   },
+                   //sadece tel no.
+                   checkPhone()
+                   {
+                    this.erorMessages=[];
+                    if(!this.validatePhone()){
+                        this.erorMessages.push("Telefon Numarası Sadece Rakam İçermelidir.");
                     }
+                   },
+                   //form gönderme.
+                   handleSubmit()
+                   {
+                    this.checkAllFields();
+                    if(this.erorMessages.length===0){
+                        this.formSubmitted=true;
+                    }
+                   }
                 }
 
             });
