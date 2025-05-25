@@ -1,10 +1,43 @@
-<script>
-    fetch=("https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=tr")
-    .then(res=>res.json())
-    .then(data=>
-        {
-            let movies=data.results.map(movie=>'<p>${movie.title}</p>').join("");
-            document.getElementById("filmList").innerHTML=movies;
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İlgi Alanlarım – Müzik API</title>
+  <link rel="stylesheet" href="css/ilgi-aalnı.css">
+</head>
+<body>
+
+  <h1 class="baslik">İlgi Alanlarım – Popüler Müzikler</h1>
+
+  <div class="arama">
+    <input type="text" id="aranacak" placeholder="Sanatçı veya şarkı adı girin">
+    <button onclick="muzikAra()">Ara</button>
+  </div>
+
+  <div class="muzikler" id="sonuclar"></div>
+
+  <script>
+    function muzikAra() {
+      const kelime = document.getElementById("aranacak").value;
+      fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(kelime)}&limit=6`)
+        .then(res => res.json())
+        .then(data => {
+          const div = document.getElementById("sonuclar");
+          div.innerHTML = "";
+
+          data.results.forEach(item => {
+            div.innerHTML += `
+              <div class="kart">
+                <img src="${item.artworkUrl100}" alt="Kapak">
+                <p><strong>${item.trackName || "Şarkı adı yok"}</strong></p>
+                <p>${item.artistName}</p>
+                <audio controls src="${item.previewUrl}">Dinleyemiyorsanız tarayıcınız desteklemiyor.</audio>
+              </div>
+            `;
+          });
         });
-</script>
-<div id="filmList"></div>
+    }
+  </script>
+
+</body>
+</html>
