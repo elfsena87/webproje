@@ -1,9 +1,9 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;/*yazı stili*/
     background-color: ivory;
-    margin: 0;
+    margin: 0;/*nesneler arası uzaklık*/
     padding: 20px;
-    text-align: center;
+    text-align: center;/*ortalanmış yazı*/
 }
 
 .container {
@@ -15,13 +15,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px;/*alt boşluk*/
 }
 
 .image-section img {
     width: 100%;
     max-width: 600px;
-    border-radius: 8px;
+    border-radius: 8px;/*köşe oval*/
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
@@ -29,15 +29,15 @@ body {
     margin-top: 10px;
     padding: 10px;
     background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 5px;/*köşe oval*/
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);/*gölge*/
     max-width: 600px;
 }
 
 h1 {
      font-size: 55px;
-  text-align: center;
-  margin-top: 40px;
+  text-align: center;/*ortalanmış yazı*/
+  margin-top: 40px;/*yukarı boşluk*/
   color:#2c3e50;;
 }
 
@@ -47,31 +47,3 @@ p {
 }
 
 
-.slider {
-  width: 100%;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  width: 300%;
-  animation: slide 10s infinite;
-}
-
-.slides img {
-  width: 100%;
-}
-
-.slider { 
-    display : flex; 
-    overflow-x : auto; 
-    scroll-snap-type : x obliged; 
-    scroll-behavior: smooth; 
-} 
-
-.slide { 
-    flex : 0  0  100% ; 
-    scroll-snap-align : start; 
-    background-size : cover; 
-    background-position : center; 
-}

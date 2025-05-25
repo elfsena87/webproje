@@ -1,35 +1,35 @@
 /* Genel Sayfa Stili */
 body {
-    background-color: ivory; /* Açık gri arka plan */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
+    background-color: ivory; /*arka plan*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;/*yazı stili*/
+    margin: 0;/*nesneler arası boşluk*/
     padding: 0;
-    text-align: center;
+    text-align: center;/*ortalanmış yazı*/
     color: #2c3e50; /* Genel yazı rengi */
 }
 
-/* Başlık Stili */
+/* Başlık */
 h1 {
-    font-size: 36px;
+    font-size: 36px;/*yazı boyutu*/
     font-weight: bold;
-    color: #2c3e50; /* Başlık rengi */
-    margin-top: 40px;
+    color: #2c3e50; /* yazı rengi */
+    margin-top: 40px;/*yukarı boşluk*/
 }
 
-/* Tanıtım Bölümü */
+/*  paragraflar */
 .about-container {
     max-width: 800px;
-    margin: auto;
+    margin: auto;/*nesneler arası uzaklık*/
     padding: 20px;
-    background-color: #ffffff; /* Beyaz kutu */
-    border-radius: 10px;
+    background-color: #ffffff; /*kutu */
+    border-radius: 10px;/*köşe oval*/
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Tanıtım Yazısı */
+/*yazı*/
 .about-container p {
-    font-size: 22px;
-    line-height: 1.6;
+    font-size: 22px;/*boyutu*/
+    line-height: 1.6;/*okunurluk*/
 }
 
 

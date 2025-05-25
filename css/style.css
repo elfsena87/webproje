@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;/*yazı stili*/
   background-color: #f5f5f5;
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@ body {
 
 h1 {
   color: #333;
-  text-align: center;
+  text-align: center;/*ortalanmış yazı*/
   margin-top: 20px;
 }
 

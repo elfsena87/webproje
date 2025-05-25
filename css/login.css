@@ -1,8 +1,8 @@
 /* Genel sayfa ayarları */
 body {
     background-color: ivory; 
-    font-family: 'Georgia', serif;
-    margin: 0;
+    font-family: 'Georgia', serif;/*yazı stili*/
+    margin: 0;/*nesneler arası uzaklık*/
     padding: 0;
     display: flex;
     align-items: center;
@@ -13,24 +13,24 @@ body {
 /* Login formunun kapsayıcısı */
 .login-container {
     background-color: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 10px;/*köşe oval*/
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 40px;
     max-width: 400px;
     width: 90%;
     position: relative;
-    border-top: 5px solid #8B0000;  /* Koyu bordo vurgusu */
+    border-top: 5px solid #8B0000; 
 }
 
 /* Başlık ayarları */
 .login-container h1 {
-    text-align: center;
-    color: #002147;  /* Koyu mavi */
+    text-align: center;/*ortalanmış yazı*/
+    color: #002147;  
     margin-bottom: 30px;
     font-size: 2em;
 }
 
-/* Form elemanlarının ortak stilleri */
+/* Form elemanlarının stilleri */
 .login-container label {
     display: block;
     font-size: 16px;
@@ -43,17 +43,17 @@ body {
 .login-container input[type="password"] {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;/*alt boşluk*/
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 5px;/*köşe oval*/
     font-size: 16px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease;/* geçiş efekt */
 }
 
 .login-container input[type="text"]:focus,
 .login-container input[type="email"]:focus,
 .login-container input[type="password"]:focus {
-    border-color:whitesmoke; /* Altın odak rengi */
+    border-color:whitesmoke; 
     outline: none;
 }
 
@@ -64,11 +64,11 @@ body {
     color: #002147;
     padding: 12px;
     border: none;
-    border-radius: 5px;
-    font-size: 18px;
+    border-radius: 5px;/*köşe oval*/
+    font-size: 18px;/*boyut*/
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;/* geçiş efekt */
 }
 
 .login-container button:hover {
